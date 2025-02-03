@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.shreyash.github.androidnewsapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.shreyash.github.androidnewsapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -48,6 +48,11 @@ dependencies {
 
     val lifecycle_version = "2.8.7"
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.androidx.recyclerview)
+
 
 
 }
