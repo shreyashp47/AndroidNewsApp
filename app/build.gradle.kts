@@ -53,6 +53,8 @@ dependencies {
     implementation (libs.converter.gson)
     implementation (libs.androidx.recyclerview)
 
+    implementation (libs.glide)
+
 
 
 }

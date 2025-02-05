@@ -1,6 +1,8 @@
 package com.shreyash.github.androidnewsapp.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -9,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.shreyash.github.androidnewsapp.MainViewModel
 import com.shreyash.github.androidnewsapp.R
+import com.shreyash.github.androidnewsapp.ui.userlist.UserListActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),View.OnClickListener  {
     private val mainViewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         val counterText = findViewById<TextView>(R.id.counterText)
         val incrementButton = findViewById<Button>(R.id.incrementButton)
         val decrementButton = findViewById<Button>(R.id.decrementButton)
+        val singleApi = findViewById<Button>(R.id.singleApi)
+        singleApi.setOnClickListener(this)
 
         mainViewModel.count.observe(this, Observer { count ->
             counterText.text = count.toString()
@@ -34,5 +39,13 @@ class MainActivity : AppCompatActivity() {
         decrementButton.setOnClickListener {
             mainViewModel.decrementCount()
         }
+    }
+
+    override fun onClick(v: View?) {
+       when (v?.id){
+           R.id.singleApi -> {
+               startActivity(Intent(this@MainActivity, UserListActivity::class.java))
+           }
+       }
     }
 }
