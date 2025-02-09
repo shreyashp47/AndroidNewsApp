@@ -1,4 +1,4 @@
-package com.shreyash.github.androidnewsapp
+package com.shreyash.github.androidnewsapp.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

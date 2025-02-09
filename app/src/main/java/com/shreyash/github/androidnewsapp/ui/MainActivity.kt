@@ -9,7 +9,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.shreyash.github.androidnewsapp.MainViewModel
 import com.shreyash.github.androidnewsapp.R
 import com.shreyash.github.androidnewsapp.ui.userlist.UserListActivity
 
