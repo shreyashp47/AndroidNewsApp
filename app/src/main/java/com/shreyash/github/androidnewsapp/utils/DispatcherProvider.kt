@@ -5,11 +5,11 @@ import kotlinx.coroutines.Dispatchers
 
 interface DispatcherProvider {
 
-    val main: CoroutineDispatcher
+    val main: CoroutineDispatcher // UI-related tasks
 
-    val io: CoroutineDispatcher
+    val io: CoroutineDispatcher // Network calls, File I/O
 
-    val default: CoroutineDispatcher
+    val default: CoroutineDispatcher // CPU-intensive tasks (not usually for DB)
 
 }
 
