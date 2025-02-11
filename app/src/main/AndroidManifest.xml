@@ -18,14 +18,7 @@
             android:name=".ui.userlist.UserListActivity"  >
 
         </activity>
-        <activity
-            android:name=".ui.filter.FilterActivity"  >
 
-        </activity>
-        <activity
-            android:name=".ui.search.SearchActivity"  >
-
-        </activity>
         <activity
             android:name=".ui.topheadline.TopHeadlineActivity" >
 

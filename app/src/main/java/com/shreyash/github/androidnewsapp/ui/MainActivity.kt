@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.shreyash.github.androidnewsapp.R
 import com.shreyash.github.androidnewsapp.ui.userlist.UserListActivity
-import com.shreyash.github.androidnewsapp.ui.filter.FilterActivity
-import com.shreyash.github.androidnewsapp.ui.search.SearchActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private val mainViewModel: MainViewModel by viewModels()
@@ -52,13 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this@MainActivity, UserListActivity::class.java))
             }
 
-            R.id.filterBtn -> {
-                startActivity(Intent(this@MainActivity, FilterActivity::class.java))
-            }
 
-            R.id.searchBtn -> {
-                startActivity(Intent(this@MainActivity, SearchActivity::class.java))
-            }
 
         }
     }
