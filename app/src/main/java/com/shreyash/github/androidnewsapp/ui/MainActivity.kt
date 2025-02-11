@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.shreyash.github.androidnewsapp.R
 import com.shreyash.github.androidnewsapp.ui.userlist.UserListActivity
+import com.shreyash.github.androidnewsapp.ui.filter.FilterActivity
 
 class MainActivity : AppCompatActivity(),View.OnClickListener  {
     private val mainViewModel : MainViewModel by viewModels()
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener  {
         val counterText = findViewById<TextView>(R.id.counterText)
         val incrementButton = findViewById<Button>(R.id.incrementButton)
         val decrementButton = findViewById<Button>(R.id.decrementButton)
+        val filterBtn = findViewById<Button>(R.id.filterBtn)
         val singleApi = findViewById<Button>(R.id.singleApi)
         singleApi.setOnClickListener(this)
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener  {
         decrementButton.setOnClickListener {
             mainViewModel.decrementCount()
         }
+        filterBtn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -45,6 +48,10 @@ class MainActivity : AppCompatActivity(),View.OnClickListener  {
            R.id.singleApi -> {
                startActivity(Intent(this@MainActivity, UserListActivity::class.java))
            }
+           R.id.filterBtn -> {
+               startActivity(Intent(this@MainActivity, FilterActivity::class.java))
+           }
+
        }
     }
 }

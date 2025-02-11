@@ -19,6 +19,10 @@
 
         </activity>
         <activity
+            android:name=".ui.filter.FilterActivity"  >
+
+        </activity>
+        <activity
             android:name=".ui.topheadline.TopHeadlineActivity" >
 
         </activity>
