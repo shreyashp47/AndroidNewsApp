@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.kapt") // Apply kapt plugin
 }
 
 android {
@@ -45,15 +46,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    val lifecycle_version = "2.8.7"
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
     implementation (libs.androidx.recyclerview)
-
     implementation (libs.glide)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
 
 
