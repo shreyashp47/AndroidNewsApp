@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 
@@ -26,9 +27,10 @@ class FilterViewModel(private val apiHelper: APIHelper,
             (1..45).asFlow()
                 .filter {
                     it % 2 == 0
-                }.filter {
+                }.flowOn(dispatcherProvider.io)
+                .filter {
                     it % 3 == 0
-                }
+                }.flowOn(dispatcherProvider.main)
                 .toList(result)
             _uiState.value = UiState.Success(result.toString())
         }

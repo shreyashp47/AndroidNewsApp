@@ -12,9 +12,10 @@ import androidx.lifecycle.Observer
 import com.shreyash.github.androidnewsapp.R
 import com.shreyash.github.androidnewsapp.ui.userlist.UserListActivity
 import com.shreyash.github.androidnewsapp.ui.filter.FilterActivity
+import com.shreyash.github.androidnewsapp.ui.search.SearchActivity
 
-class MainActivity : AppCompatActivity(),View.OnClickListener  {
-    private val mainViewModel : MainViewModel by viewModels()
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener  {
         val decrementButton = findViewById<Button>(R.id.decrementButton)
         val filterBtn = findViewById<Button>(R.id.filterBtn)
         val singleApi = findViewById<Button>(R.id.singleApi)
+        val searchBtn = findViewById<Button>(R.id.searchBtn)
         singleApi.setOnClickListener(this)
 
         mainViewModel.count.observe(this, Observer { count ->
@@ -41,17 +43,23 @@ class MainActivity : AppCompatActivity(),View.OnClickListener  {
             mainViewModel.decrementCount()
         }
         filterBtn.setOnClickListener(this)
+        searchBtn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-       when (v?.id){
-           R.id.singleApi -> {
-               startActivity(Intent(this@MainActivity, UserListActivity::class.java))
-           }
-           R.id.filterBtn -> {
-               startActivity(Intent(this@MainActivity, FilterActivity::class.java))
-           }
+        when (v?.id) {
+            R.id.singleApi -> {
+                startActivity(Intent(this@MainActivity, UserListActivity::class.java))
+            }
 
-       }
+            R.id.filterBtn -> {
+                startActivity(Intent(this@MainActivity, FilterActivity::class.java))
+            }
+
+            R.id.searchBtn -> {
+                startActivity(Intent(this@MainActivity, SearchActivity::class.java))
+            }
+
+        }
     }
 }
